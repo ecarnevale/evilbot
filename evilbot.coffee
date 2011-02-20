@@ -212,6 +212,8 @@ hear /weather in (.+)/i, (message) ->
         icon = match[1].match(/<icon data="(.+?)"/)
         degrees = match[1].match(/<temp_f data="(.+?)"/)
         message.say "#{degrees[1]}° — http://www.google.com#{icon[1]}"
+      else
+        message.say "Sorry, I don't know about this place called #{place}"
     catch e
       console.log "Weather error: " + e
 
